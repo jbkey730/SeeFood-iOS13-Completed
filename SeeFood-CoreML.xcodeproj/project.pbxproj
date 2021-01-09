@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AD083EFF1F8F6DE000946652 /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AD083EFE1F8F6DDD00946652 /* Inceptionv3.mlmodel */; };
+		10055DF325AA653B0065B573 /* club.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 10055DF225AA653A0065B573 /* club.mlmodel */; };
 		AD5329121F02816300ACFF54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5329111F02816300ACFF54 /* AppDelegate.swift */; };
 		AD5329141F02816300ACFF54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5329131F02816300ACFF54 /* ViewController.swift */; };
 		AD5329171F02816300ACFF54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD5329151F02816300ACFF54 /* Main.storyboard */; };
@@ -16,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		10055DF225AA653A0065B573 /* club.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = club.mlmodel; path = ../../../../Downloads/club.mlmodel; sourceTree = "<group>"; };
 		AD083EFE1F8F6DDD00946652 /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Inceptionv3.mlmodel; sourceTree = "<group>"; };
 		AD53290E1F02816300ACFF54 /* SeeFood-CoreML.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SeeFood-CoreML.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD5329111F02816300ACFF54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				AD083EFE1F8F6DDD00946652 /* Inceptionv3.mlmodel */,
+				10055DF225AA653A0065B573 /* club.mlmodel */,
 				AD5329181F02816300ACFF54 /* Assets.xcassets */,
 				AD53291A1F02816300ACFF54 /* LaunchScreen.storyboard */,
 			);
@@ -102,7 +104,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1210;
 				ORGANIZATIONNAME = "Angela Yu";
 				TargetAttributes = {
 					AD53290D1F02816300ACFF54 = {
@@ -148,7 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD5329141F02816300ACFF54 /* ViewController.swift in Sources */,
-				AD083EFF1F8F6DE000946652 /* Inceptionv3.mlmodel in Sources */,
+				10055DF325AA653B0065B573 /* club.mlmodel in Sources */,
 				AD5329121F02816300ACFF54 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -200,6 +202,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -225,7 +228,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -259,6 +262,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -278,7 +282,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -290,10 +294,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 3ECFYJZ64T;
+				DEVELOPMENT_TEAM = L34NVW767B;
 				INFOPLIST_FILE = "SeeFood-CoreML/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.londonappbrewery.SeeFood-CoreML";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jblamkey-hotdogornot";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -304,10 +308,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 3ECFYJZ64T;
+				DEVELOPMENT_TEAM = L34NVW767B;
 				INFOPLIST_FILE = "SeeFood-CoreML/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.londonappbrewery.SeeFood-CoreML";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jblamkey-hotdogornot";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

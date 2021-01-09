@@ -27,31 +27,40 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func detect(image: CIImage) {
         
         // Load the ML model through its generated class
-        guard let model = try? VNCoreMLModel(for: Inceptionv3().model) else {
+        guard let model = try? VNCoreMLModel(for: club(configuration: MLModelConfiguration()).model) else {
             fatalError("can't load ML model")
         }
         
-        let request = VNCoreMLRequest(model: model) { request, error in
-            guard let results = request.results as? [VNClassificationObservation],
-                let topResult = results.first
-                else {
-                    fatalError("unexpected result type from VNCoreMLRequest")
+        let request = VNCoreMLRequest(model: model) { [weak self] request, error in guard let results = request.results as? [VNClassificationObservation],
+                                                
+            let topResult = results.first?.confidence
+       
+            //VNImageCropAndScaleOption
+                                                                                          
+        else{
+                    print("No results")
+                    return
             }
-            
-            if topResult.identifier.contains("hotdog") {
+        print(topResult)
+        let predInt = Double(topResult)
+        var thresh: Double
+        thresh = 0.5
+        if predInt < thresh {
+            DispatchQueue.main.async {
+                //self?.navigationItem.title = "Lax Wheat"
+                self?.navigationItem.title = String(predInt)
+                self?.navigationController?.navigationBar.barTintColor = UIColor.orange
+                self?.navigationController?.navigationBar.isTranslucent = false
+                                        }
+        }
+            else{
                 DispatchQueue.main.async {
-                    self.navigationItem.title = "Hotdog!"
-                    self.navigationController?.navigationBar.barTintColor = UIColor.green
-                    self.navigationController?.navigationBar.isTranslucent = false
-                }
+                    self?.navigationItem.title = String(predInt) //"Club Wheat"
+                    self?.navigationController?.navigationBar.barTintColor = UIColor.orange
+                    self?.navigationController?.navigationBar.isTranslucent = false
+                    }
             }
-            else {
-                DispatchQueue.main.async {
-                    self.navigationItem.title = "Not Hotdog!"
-                    self.navigationController?.navigationBar.barTintColor = UIColor.red
-                    self.navigationController?.navigationBar.isTranslucent = false
-                }
-            }
+       
         }
         
         let handler = VNImageRequestHandler(ciImage: image)
@@ -63,6 +72,79 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             print(error)
         }
     }
+        
+    
+    
+    
+        
+        
+            
+        /*let request = VNCoreMLRequest(model: model) { (request, error) in
+            guard let results = request.results as? [VNClassificationObservation],
+            //self.navigationItem.title =
+                let _ = results.first else{
+                print("No Results")
+                //self.message = .errNoRect
+                return
+            }
+            var thresh: Double
+            //var predString: String
+            thresh = 0.5
+            */
+            /*if let predInt = Double(preds.text!){print()}
+            if predInt! > thresh {
+          
+                
+            }
+            
+            if predInt! < thresh {
+                DispatchQueue.main.async {
+                self.navigationItem.title = "Its Lax Wheat"
+                self.navigationController?.navigationBar.barTintColor = UIColor.yellow
+                self.navigationController?.navigationBar.isTranslucent = false
+                print(predInt)
+                
+                }
+            }
+                
+        }
+ */
+        //      let topResult = results.first
+         //   else { fatalError("Model failed to process image.")
+        
+       // let handler = VNImageRequestHandler(ciImage: image){
+        //do {
+        //try handler.perform([request])
+       // }
+        //catch{
+         //   print(error)
+       // }
+         /*   if topResult.identifier.contains("Identity") {
+            //if let firstResult = results.first{
+                 
+            }
+            else {
+                DispatchQueue.main.async {
+                    self.navigationItem.title = "Not Club!"
+                    self.navigationController?.navigationBar.barTintColor = UIColor.red
+                    self.navigationController?.navigationBar.isTranslucent = false
+                }
+            }
+            //if let firstResult = results.first {
+             //   self.textView.text = firstResult.identifier.capitalized
+             //   print (firstResult.identifier.capitalized)
+            //}
+        }
+        
+        let handler = VNImageRequestHandler(ciImage: image)
+        
+        do {
+            try handler.perform([request])
+        }
+        catch {
+            print(error)
+        }*/
+    //}
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
