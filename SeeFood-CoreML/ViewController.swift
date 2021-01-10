@@ -40,7 +40,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         else{
                     print("No results")
                     return
-            }
+        }
         print(topResult)
         let predInt = Double(topResult)
         var thresh: Double
